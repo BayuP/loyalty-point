@@ -3,18 +3,13 @@
 
 frappe.ui.form.on('Master Member', {
 	refresh: function(frm) {
+		if(frm.doc.point_member > 60){
+			frm.set_value('status_member','silver');
+		} else if(frm.doc.point_member > 100){
+			frm.set_value('status_member','gold');
+		}
 
 	}
 });
 
-frappe.ui.form.on("Top Up Saldo Line", "uang", function(frm, cdt, cdn) {
 
-	var top_up_saldos = frm.doc.top_up_saldo;
-	var total = 0
-	for(var i in top_up_saldos) {
-	 total = total + top_up_saldos[i].uang
-	 }
- 
-	 frm.set_value("saldo_member",total)
- 
- });

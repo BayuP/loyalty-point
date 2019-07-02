@@ -9,7 +9,7 @@ frappe.ui.form.on('Top Up Saldo', {
 
 frappe.ui.form.on("Top Up Saldo Line", "uang", function(frm, cdt, cdn) {
 
-	var top_up_saldos = frm.doc.top_up;
+	var top_up_saldos = frm.doc.top_up_saldo;
 	var total = 0
 	for(var i in top_up_saldos) {
 	 total = total + top_up_saldos[i].uang
